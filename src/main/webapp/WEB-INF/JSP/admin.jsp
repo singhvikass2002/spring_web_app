@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Welcome admin to this Paapi world</h1>
+<h1>Welcome admin to this Anyayi world</h1>
 </body>
 </html>
