@@ -11,4 +11,9 @@ public class WelcomeController {
 	{
 		return "index";
 	}
+	@RequestMapping("/admin")
+	public String adminDetails()
+	{
+		return "admin";
+	}
 }
