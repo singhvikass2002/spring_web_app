@@ -11,18 +11,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/hello")
 public class HelloWorldController {
 
-	// @RequestMapping(method = RequestMethod.GET)
+//	 @RequestMapping(method = RequestMethod.GET)
 	@GetMapping(path = { "/getmapping", "/fetchMapping" })
 	public String get(HttpServletRequest req, HttpServletResponse res) {
 		
 		System.out.println("Controller- fetchMapping");
-		return "index";
+		return "admin";
 	}
 
 	// @GetMapping(path= {"/getmapping"}, params="name")
