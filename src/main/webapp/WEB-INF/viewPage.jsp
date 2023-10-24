@@ -1,5 +1,6 @@
 <html>  
 <body>  
-<p>Welcome to Spring MVC</p>  
+${message}  
+<br><br>  
 </body>  
 </html>
