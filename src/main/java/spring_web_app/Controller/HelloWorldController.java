@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +31,7 @@ public class HelloWorldController {
 	// public String getParam(HttpServletRequest req, HttpServletResponse res) {
 	@GetMapping(path = { "/getParam" })
 	public String getParam(@RequestParam(name = "name", defaultValue = "Guest") String name) {
-		System.out.println("Controller-  params=name" + name);
+		System.out.println("Controller-  params=name: " + name);
 		return "index";
 	}
 
@@ -38,10 +39,33 @@ public class HelloWorldController {
 	@GetMapping(path = { "/getCustomer/{customerId}/details" })
 	public String getPathVariable(@PathVariable String customerId) {
 
-		System.out.println("Controller-  params=customerId" + customerId);
+		System.out.println("Controller-  params=customerId : " + customerId);
 		return "index";
 	}
 
+	
+	
+	
+//	@RequestMapping("/setCookie")
+//	public String setCookie(HttpServletResponse response) {
+//	    Cookie cookie = new Cookie("myCookie", "DangerValue");
+//	    cookie.setMaxAge(3600); // Cookie will expire in 1 hour
+//	    response.addCookie(cookie);
+//	    return "redirect:/hello/second";
+//	}
+	
+	
+	
+	
+	
+	@RequestMapping("/second")
+    public String secondPage(@CookieValue(value = "myCookie", defaultValue = "defaultCookieValue1") String myCookieValue, Model model) {
+        // Use myCookieValue in your controller logic
+        model.addAttribute("cookiesValue", myCookieValue);
+        return "second";
+    }
+	
+	
 	@GetMapping(path = { "/getCookie" })
 	public String getCookiesValue(HttpServletRequest req, @CookieValue("JSESSIONID") String jsessionCookie) {
 		String value= "";
