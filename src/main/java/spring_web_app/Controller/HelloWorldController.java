@@ -26,9 +26,6 @@ public class HelloWorldController {
 		}
 	}
 	
-	@GetMapping("/")
-	public String welcomeFile() {
-		return "index";
-	}
+	
 	
 }
