@@ -16,7 +16,7 @@ public class ReservationController {
 	@GetMapping("/bookingForm")
 	public String bookingForm(Model model) {
 		System.out.println("ReservationController.bookingForm()");
-		// create a reservation object
+		// create a reservation object.....
 //		Reservation res = new Reservation();
 //		res.setFirstName("Guest");
 		// provide reservation object to the model
