@@ -2,8 +2,8 @@
 <project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.training</groupId>
-	<artifactId>spring_web_app</artifactId>
+	<groupId>com.journaldev.spring</groupId>
+	<artifactId>SpringMVCHibernate</artifactId>
 	<name>SpringMVCHibernate</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
@@ -147,17 +147,7 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-	
-	<dependency>
-	<groupId>jstl</groupId>
-	<artifactId>jstl</artifactId>
-	<version>1.2</version>
-</dependency>
-<dependency>
-	<groupId>taglibs</groupId>
-	<artifactId>standard</artifactId>
-	<version>1.1.2</version>
-</dependency>
+
 	</dependencies>
     <build>
         <plugins>
