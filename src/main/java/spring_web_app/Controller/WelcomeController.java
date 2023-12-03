@@ -9,6 +9,7 @@ public class WelcomeController {
 	@RequestMapping("/")
 	public String message()
 	{
+		System.out.println("AA gya");
 		return "index";
 	}
 	@RequestMapping("/admin")
