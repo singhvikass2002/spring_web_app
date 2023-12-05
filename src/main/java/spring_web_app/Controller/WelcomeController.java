@@ -9,6 +9,6 @@ public class WelcomeController {
 	@RequestMapping("/")
 	public String message()
 	{
-		return "index";
+		return "/WEB-INF/index1.jsp";
 	}
 }
