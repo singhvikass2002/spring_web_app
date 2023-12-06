@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HelloWorldController {
-	@RequestMapping("/hello")
+	@RequestMapping("/login")
 	public String display(HttpServletRequest req, Model m) {
 		// read the provided form data
 		String name = req.getParameter("name");
@@ -24,6 +24,11 @@ public class HelloWorldController {
 			m.addAttribute("message", msg);
 			return "errorPage";
 		}
+	}
+	@RequestMapping("/")
+	public String welcome()
+	{
+		return "index";
 	}
 	
 	
