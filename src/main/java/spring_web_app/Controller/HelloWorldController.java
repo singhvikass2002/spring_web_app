@@ -14,9 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/hello")
+@RequestMapping("/electronics")
 public class HelloWorldController {
 
 //	 @RequestMapping(method = RequestMethod.GET)
@@ -36,11 +37,12 @@ public class HelloWorldController {
 	}
 
 	// hello/getCustomer/1234/details
+	@ResponseBody
 	@GetMapping(path = { "/getCustomer/{customerId}/details" })
 	public String getPathVariable(@PathVariable String customerId) {
 
 		System.out.println("Controller-  params=customerId : " + customerId);
-		return "index";
+		return "Controller-  params=customerId : " + customerId;
 	}
 
 	
