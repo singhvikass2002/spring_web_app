@@ -14,13 +14,13 @@ public class HelloWorldController {
 		// read the provided form data
 		String name = req.getParameter("name");
 		String pass = req.getParameter("pass");
-		if (pass.equals("admin")) {
+		if (name.equals("kunal") && pass.equals("admin")) {
 			String msg = "HELLO " + name+" Now ALL YOURS";
 			// add a message to the model
 			m.addAttribute("message", msg);
 			return "viewPage";
 		} else {
-			String msg = "Sorry " + name + ". You entered an incorrect password";
+			String msg = "Sorry " + name + ". You entered an incorrect name or password";
 			m.addAttribute("message", msg);
 			return "errorPage";
 		}
