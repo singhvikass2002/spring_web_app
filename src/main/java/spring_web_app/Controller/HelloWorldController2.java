@@ -17,14 +17,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/foorwear")
+@RequestMapping("/footwear")
 public class HelloWorldController2 {
 
 //	 @RequestMapping(method = RequestMethod.GET)
 	@GetMapping(path = { "/getmapping", "/fetchMapping" })
 	public String get(HttpServletRequest req, HttpServletResponse res) {
 		
-		System.out.println("Controller- fetchMapping");
+		System.out.println("Footwear - Controller- fetchMapping");
 		return "admin";
 	}
 
