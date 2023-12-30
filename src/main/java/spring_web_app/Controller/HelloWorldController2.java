@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/electronics")
-public class HelloWorldController {
+@RequestMapping("/foorwear")
+public class HelloWorldController2 {
 
 //	 @RequestMapping(method = RequestMethod.GET)
 	@GetMapping(path = { "/getmapping", "/fetchMapping" })
@@ -48,13 +48,13 @@ public class HelloWorldController {
 	
 	
 	
-	@RequestMapping("/setCookie")
-	public String setCookie(HttpServletResponse response) {
-	    Cookie cookie = new Cookie("myCookie", "DangerValue");
-	    cookie.setMaxAge(3600); // Cookie will expire in 1 hour
-	    response.addCookie(cookie);
-	    return "redirect:/electronics/second";
-	}
+//	@RequestMapping("/setCookie")
+//	public String setCookie(HttpServletResponse response) {
+//	    Cookie cookie = new Cookie("myCookie", "DangerValue");
+//	    cookie.setMaxAge(3600); // Cookie will expire in 1 hour
+//	    response.addCookie(cookie);
+//	    return "redirect:/hello/second";
+//	}
 	
 	
 	
