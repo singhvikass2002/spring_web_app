@@ -1,1 +1,0 @@
-<a href="reservation/bookingForm">bookingForm</a>
