@@ -45,7 +45,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
 			<list>
-				<value>com.journaldev.spring.model.Person</value>
+				<value>spring_web_app.Model.Reservation</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -53,22 +53,22 @@
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
 				</prop>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 			</props>
 		</property>
 	</bean>
 
-	<bean id="personDAO"
-		class="com.journaldev.spring.dao.PersonDAOImpl">
+	<bean id="reservationDAO"
+		class="spring_web_app.dao.ReservationDAOImpl">
 		<property name="sessionFactory"
 			ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
-	<bean id="personService"
-		class="com.journaldev.spring.service.PersonServiceImpl">
-		<property name="personDAO" ref="personDAO"></property>
+	<bean id="reservationService"
+		class="spring_web_app.service.ReservationServiceImpl">
+		<property name="reservationDAO" ref="reservationDAO"></property>
 	</bean>
 	<context:component-scan
-		base-package="com.journaldev.spring" />
+		base-package="spring_web_app" />
 
 	<tx:annotation-driven
 		transaction-manager="transactionManager" />
@@ -80,6 +80,3 @@
 	</bean>
 
 </beans>
-
-
-
