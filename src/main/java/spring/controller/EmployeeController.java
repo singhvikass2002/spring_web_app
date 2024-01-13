@@ -47,25 +47,38 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(value = EmpRestURIConstants.GET_ALL_EMP, method = RequestMethod.GET)
-	public @ResponseBody List<Employee> getAllEmployees() {
+	public @ResponseBody Map getAllEmployees() {
 		logger.info("Start getAllEmployees.");
 		List<Employee> emps = new ArrayList<Employee>();
 		Set<Integer> empIdKeys = empData.keySet();
 		for (Integer i : empIdKeys) {
 			emps.add(empData.get(i));
 		}
-		return emps;
+		return empData;
 	}
-
 	@RequestMapping(value = EmpRestURIConstants.CREATE_EMP, method = RequestMethod.POST)
-	public @ResponseBody Employee createEmployee(@RequestBody Employee emp) {
+	public @ResponseBody Employee createAnEmployee(@RequestBody Employee emp) {
 		logger.info("Start createEmployee.");
 		emp.setCreatedDate(new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
 		empData.put(emp.getId(), emp);
 		return emp;
 	}
+	@RequestMapping(value = EmpRestURIConstants.CREATE_EMPS, method = RequestMethod.POST)
+	public @ResponseBody String createEmployee() {
+		logger.info("Start createEmployee.");
+		for (int i = 1; i <= 10; i++) {
+			Employee emp = new Employee();
+			emp.setId(i);
+			emp.setName("Piyush "+i);
+			
+			emp.setCreatedDate(new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
+			empData.put(i, emp);
+			
+		}
+		return "10 employees records inserted!!!!!!";
+	}
 
-	@RequestMapping(value = EmpRestURIConstants.DELETE_EMP, method = RequestMethod.PUT)
+	@RequestMapping(value = EmpRestURIConstants.DELETE_EMP, method = RequestMethod.DELETE)
 	public @ResponseBody Employee deleteEmployee(@PathVariable("id") int empId) {
 		logger.info("Start deleteEmployee.");
 		Employee emp = empData.get(empId);
