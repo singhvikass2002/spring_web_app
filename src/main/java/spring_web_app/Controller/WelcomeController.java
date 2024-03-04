@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class WelcomeController {
 	
-	@ResponseBody
+//	@ResponseBody
 	@RequestMapping("/")
 	public String message()
 	{
+		System.out.println("message() called...................");
 		return "index1.jsp";
 	}
 }
