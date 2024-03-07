@@ -9,11 +9,13 @@ public class WelcomeController {
 	@RequestMapping("/")
 	public String message()
 	{
-		return "index";
+		System.out.println("WelcomeController.message()");
+		return "/index";
 	}
 	@RequestMapping("/admin")
 	public String adminDetails()
 	{
-		return "admin";
+		System.out.println("WelcomeController.adminDetails()");
+		return "/admin";
 	}
 }
