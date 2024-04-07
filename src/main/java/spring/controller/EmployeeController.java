@@ -31,10 +31,10 @@ public class EmployeeController {
 	public @ResponseBody Employee getDummyEmployee() {
 		logger.info("Start getDummyEmployee");
 		Employee emp = new Employee();
-		emp.setId(9999);
+		emp.setId(1);
 		emp.setName("Piyush");
 		
-		emp.setCreatedDate(new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
+		emp.setCreatedDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date()));
 		empData.put(9999, emp);
 		return emp;
 	}
