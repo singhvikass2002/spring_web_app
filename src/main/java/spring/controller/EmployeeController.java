@@ -35,7 +35,7 @@ public class EmployeeController {
 		emp.setName("Piyush");
 		
 		emp.setCreatedDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date()));
-		empData.put(9999, emp);
+		empData.put(1, emp);
 		return emp;
 	}
 
@@ -66,6 +66,7 @@ public class EmployeeController {
 	@RequestMapping(value = EmpRestURIConstants.CREATE_EMPS, method = RequestMethod.POST)
 	public @ResponseBody String createEmployee() {
 		logger.info("Start createEmployee.");
+		System.out.println("DONEEEEEEEEEEE");
 		for (int i = 1; i <= 10; i++) {
 			Employee emp = new Employee();
 			emp.setId(i);
