@@ -1,21 +1,17 @@
 package spring_web_app.Controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HelloWorldController {
 	@RequestMapping("/login")
-	public String display(HttpServletRequest req, Model m) {
-		// read the provided form data
-		String name = req.getParameter("name");
-		String pass = req.getParameter("pass");
+	public String display(@RequestParam(name = "name") String name, @RequestParam(name = "pass") String pass, Model m) {
+		System.out.println("HelloWorldController.display()");	
 		if (name.equals("kunal") && pass.equals("admin")) {
-			String msg = "HELLO " + name+" Now ALL YOURS";
+			String msg = "HELLO " + name + " Now ALL YOURS";
 			// add a message to the model
 			m.addAttribute("message", msg);
 			return "viewPage";
@@ -25,12 +21,10 @@ public class HelloWorldController {
 			return "errorPage";
 		}
 	}
+
 	@RequestMapping("/")
-	public String welcome()
-	{
+	public String welcome() {
 		return "index";
 	}
-	
-	
-	
+
 }
