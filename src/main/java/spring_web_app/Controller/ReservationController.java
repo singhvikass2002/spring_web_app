@@ -26,22 +26,18 @@ public class ReservationController {
 
 	@RequestMapping("/bookingForm")
 	public String bookingForm(Model model) {
-//		System.out.println("ReservationController.bookingForm()");
-		// create a reservation object.....
-//		Reservation res = new Reservation();
-//		res.setFirstName("Guest");
-		// provide reservation object to the model
-//		model.addAttribute("reservation", res);
+		System.out.println("ReservationController.bookingForm()");
+		model.addAttribute("reservation", new Reservation());
 		return "reservation-page";
 	}
 	
-	@ModelAttribute
-	public void addAttribute(Model model) {
-		System.out.println("ReservationController.addAttribute()");
-		Reservation res = new Reservation();
-		// provide reservation object to the model
-		model.addAttribute("reservation", res);
-	}
+//	@ModelAttribute
+//	public void addAttribute(Model model) {
+//		System.out.println("ReservationController.addAttribute()");
+//		Reservation res = new Reservation();
+//		// provide reservation object to the model
+//		model.addAttribute("reservation", res);
+//	}
 
 
 	@RequestMapping("/submitForm")
