@@ -31,13 +31,6 @@ public class ReservationController {
 		return "reservation-page";
 	}
 	
-//	@ModelAttribute
-//	public void addAttribute(Model model) {
-//		System.out.println("ReservationController.addAttribute()");
-//		Reservation res = new Reservation();
-//		// provide reservation object to the model
-//		model.addAttribute("reservation", res);
-//	}
 
 
 	@RequestMapping("/submitForm")

@@ -43,11 +43,13 @@
 	<bean id="SessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="annotatedClasses">
+		<property name="packagesToScan" value="spring_web_app.Model"></property>
+		
+		<!-- <property name="annotatedClasses">
 			<list>
 				<value>spring_web_app.Model.Reservation</value>
 			</list>
-		</property>
+		</property> -->
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
