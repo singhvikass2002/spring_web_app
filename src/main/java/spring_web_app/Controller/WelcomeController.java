@@ -10,12 +10,12 @@ public class WelcomeController {
 	public String message()
 	{
 		System.out.println("WelcomeController.message()");
-		return "/index";
+		return "index";
 	}
 	@RequestMapping("/admin")
 	public String adminDetails()
 	{
 		System.out.println("WelcomeController.adminDetails()");
-		return "/admin";
+		return "admin";
 	}
 }
