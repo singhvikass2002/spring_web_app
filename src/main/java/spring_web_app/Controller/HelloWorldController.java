@@ -51,7 +51,7 @@ public class HelloWorldController {
 	@RequestMapping("/setCookie")
 	public String setCookie(HttpServletResponse response) {
 	    Cookie cookie = new Cookie("myCookie", "DangerValue");
-	    cookie.setMaxAge(3600); // Cookie will expire in 1 hour
+	    cookie.setMaxAge(10); // Cookie will expire in 1 hour
 	    response.addCookie(cookie);
 	    return "redirect:/electronics/second";
 	}
@@ -68,33 +68,5 @@ public class HelloWorldController {
     }
 	
 	
-	@GetMapping(path = { "/getCookie" })
-	public String getCookiesValue(HttpServletRequest req, @CookieValue("JSESSIONID") String jsessionCookie) {
-		String value= "";
-		Cookie[] cookies = req.getCookies();
-		for (Cookie cookie : cookies) {
-			if (cookie.getName().equals("JSESSIONID")) {
-				value = cookie.getValue();
-			}
-		}
-		System.out.println("Controller-  cookie=" + value);
-		System.out.println("Controller-  jsessionCookie=" + jsessionCookie);
-		return "index";
-	}
-
-	// @RequestMapping(method = RequestMethod.POST)
-	@PostMapping
-	public String post(HttpServletRequest req, HttpServletResponse res) {
-
-		System.out.println("Controller- POST");
-		return "index";
-	}
-
-	// @RequestMapping(method = RequestMethod.DELETE)
-	@DeleteMapping
-	public String delete(HttpServletRequest req, HttpServletResponse res) {
-
-		System.out.println("Controller- DELETE");
-		return "index";
-	}
+	
 }
