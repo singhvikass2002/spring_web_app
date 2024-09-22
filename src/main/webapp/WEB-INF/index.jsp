@@ -1,5 +1,5 @@
 <html>  
-<body>
+<body bgcolor="pink">
 	<center>  
 		<p>Welcome to Spring world</p>
 		<form action="login">

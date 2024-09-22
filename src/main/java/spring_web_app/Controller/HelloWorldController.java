@@ -28,20 +28,20 @@ public class HelloWorldController {
 		}
 	}
 
-	@RequestMapping("/login")
-	public String display(@RequestParam(name = "name") String name, @RequestParam(name = "pass") String pass, Model m) {
-		System.out.println("HelloWorldController.display()");	
-		if (name.equals("kunal") && pass.equals("admin")) {
-			String msg = "HELLO " + name + " Now ALL YOURS";
-			// add a message to the model
-			m.addAttribute("message", msg);
-			return "viewPage";
-		} else {
-			String msg = "Sorry " + name + ". You entered an incorrect name or password";
-			m.addAttribute("message", msg);
-			return "errorPage";
-		}
-	}
+//	@RequestMapping("/login")
+//	public String display(@RequestParam(name = "name") String name, @RequestParam(name = "pass") String pass, Model m) {
+//		System.out.println("HelloWorldController.display()");	
+//		if (name.equals("kunal") && pass.equals("admin")) {
+//			String msg = "HELLO " + name + " Now ALL YOURS";
+//			// add a message to the model
+//			m.addAttribute("message", msg);
+//			return "viewPage";
+//		} else {
+//			String msg = "Sorry " + name + ". You entered an incorrect name or password";
+//			m.addAttribute("message", msg);
+//			return "errorPage";
+//		}
+//	}
 
 	@RequestMapping("/")
 	public String welcome() {
