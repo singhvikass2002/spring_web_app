@@ -39,17 +39,14 @@
 		<property name="password" value="root" />
 	</bean>
 
-	<!-- Hibernate  SessionFactory Bean definition -->
+	<!-- Hibernate SessionFactory Bean definition -->
 	<bean id="SessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="packagesToScan" value="spring_web_app.Model"></property>
-		
-		<!-- <property name="annotatedClasses">
-			<list>
-				<value>spring_web_app.Model.Reservation</value>
-			</list>
-		</property> -->
+
+		<!-- <property name="annotatedClasses"> <list> <value>spring_web_app.Model.Reservation</value> 
+			</list> </property> -->
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
@@ -62,8 +59,7 @@
 
 	<bean id="reservationDAO"
 		class="spring_web_app.dao.ReservationDAOImpl">
-		<property name="sessionFactory"
-			ref="SessionFactory" />
+		<property name="sessionFactory" ref="SessionFactory" />
 	</bean>
 	<bean id="reservationService"
 		class="spring_web_app.service.ReservationServiceImpl">
@@ -72,13 +68,16 @@
 	<context:component-scan
 		base-package="spring_web_app" />
 
+	<!-- This element enables declarative transaction management using annotations 
+		(e.g., @Transactional) in Spring. By setting annotation-driven, you're telling 
+		Spring to look for @Transactional annotations and apply the transaction management 
+		logic accordingly. -->
 	<tx:annotation-driven
 		transaction-manager="transactionManager" />
 
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<property name="sessionFactory"
-			ref="SessionFactory" />
+		<property name="sessionFactory" ref="SessionFactory" />
 	</bean>
 
 </beans>
